@@ -10,9 +10,9 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '3bd4c3ab-4946-4167-a0af-99c02d58af80'
-  imageRepository: 'dockerspringboot'
-  containerRegistry: 'myacr001.azurecr.io'
+  dockerRegistryServiceConnection: '723477ce-4e05-4e6e-a3c1-13bdf919a5cd'
+  imageRepository: 'dockerspringbootapp'
+  containerRegistry: 'myacrrepo131.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
@@ -38,7 +38,7 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-     - task: Docker@2
+    - task: Docker@2
       displayName: Build a Docker image 
       inputs:
         command: build
@@ -69,6 +69,3 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-   
-
-
