@@ -46,10 +46,3 @@ stages:
     azureContainerRegistry: '{"loginServer":"myacr001.azurecr.io", "id" : "/subscriptions/6009371c-0744-4d7c-8d6a-a68cbeed9453/resourceGroups/RG/providers/Microsoft.ContainerRegistry/registries/myacr001"}'
     includeLatestTag: true
 
-- task: Docker@0
-  displayName: 'Push an image'
-  inputs:
-    azureSubscription: 'Pay-As-You-Go (6009371c-0744-4d7c-8d6a-a68cbeed9453)'
-    azureContainerRegistry: '{"loginServer":"myacr001.azurecr.io", "id" : "/subscriptions/6009371c-0744-4d7c-8d6a-a68cbeed9453/resourceGroups/RG/providers/Microsoft.ContainerRegistry/registries/myacr001"}'
-    action: 'Push an image'
-
