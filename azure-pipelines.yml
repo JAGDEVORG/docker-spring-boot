@@ -39,9 +39,6 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
    
-- task: Maven@4
-  displayName: 'Maven pom.xml'
-
 - task: Docker@0
   displayName: 'Build an image'
   inputs:
